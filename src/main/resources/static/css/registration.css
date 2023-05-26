@@ -1,0 +1,103 @@
+form {
+	display: flex;
+	margin:auto;
+	height: 100%;
+	color: #fff9ff;
+}
+
+
+h2{
+	font-size: 2em;
+	font-weight: 800;
+}
+
+fieldset {
+	margin: auto;
+}
+
+input{
+	background: #512a9d;
+	border: none;
+	height: 2em;
+	width: 90%;
+	font-size: 1.2em;
+	border-radius: 0.3em;
+	transition-duration: .3s;
+	color: #fff;
+	padding: 0 0.5em;
+	margin: auto;
+}
+
+
+input:hover{
+	box-shadow: 0 0 1em #512a9d;
+	transition-duration: .3s;
+
+}
+
+legend{
+	margin: auto;
+}
+
+header{
+	position: fixed;
+	width: 100%;
+}
+
+.registration{
+	height: 100vh;
+}
+
+.form-field{
+	margin: 1.5em 0;
+	width: 100%;
+}
+
+.form-field button{
+	display: block;
+	margin: auto;
+	font-weight: 700;
+	font-size: 1em;
+	transition-duration: 0.3s;
+	border: none;
+	background: #7c5bde;
+	border-radius: 0.3em;
+	color: #fff;
+	padding: 0.8em;
+}
+
+.form-field button:hover{
+	background: #7c5bde;
+	transition-duration: 0.3s;
+}
+
+.form-field:last-child p{
+	text-align: center;
+	margin-top: 1em;
+}
+
+label{
+	display: block;
+	width: 100%;
+}
+
+label span{
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+fieldset{
+	border-radius: 1em;
+	border: 0.1em solid #000;
+	box-shadow: 0 0 3em #512a9d;
+	padding: 2em;
+}
+
+a:hover{
+	color: #fff;
+	transition-duration: 0.3s;
+}
+
+a{
+	transition-duration: 0.3s;
+}

@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+	background: #24104f;
+	font-family: 'Nunito Sans', sans-serif;
+	overflow-x: hidden;
+}
+
+.errors{
+	color: #b1241f;
+	margin-bottom: 5px;
+}
+
+input {
+	padding: 0 1em;
+}
+
+
+.container{
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	max-width: 1200px;
+}
+
+header {
+	background: #7c5bde;
+	height: 4em;
+	color: #fff9ff;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	font-size: 1.2em;
+
+}
+
+
+.logo h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	color: #fff;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img{
+	width: 25%;
+	margin-right: 5%;
+}
+
+.scripts {
+	color: #fff9ff;
+}
+
+.script{
+	font-size: 1.2em;
+	background: #512a9d;
+	padding: 2em 3em;
+	border-radius: 1em;
+	margin-bottom: 2em;
+	border: 0.1em solid #000;
+	box-shadow: 0 0 3em #512a9d;
+}
+
+.script-datePublication{
+	margin-bottom: 0.7em;
+}
+
+.script-title{
+	margin-bottom: 0.5em;
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+.script-genre{
+	margin-bottom: 0.7em;
+}
+
+.script-synopsis{
+	margin-bottom: 0.5em;
+	word-wrap: break-word;
+	line-height: 1.3;
+}
+
+.script-footer {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 700;
+}
+
+.script-genre {
+	font-weight: 700;
+}
+
+select {
+	background: #6e4eb1;
+	font-size: 1.2em;
+	padding: 0.5em;
+	border: 0.1em solid #000;
+	border-radius: 0.2em;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 1em #000;
+}
+
+
+
+
+
+#sort{
+	padding: 0 1em;
+	color: #a794cc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: fit-content;
+}
+
+#sort h3{
+	font-size: 1.3em;
+	margin-right: 0.5em;
+}
+
+
+#switches{
+	display: flex;
+	align-items: center;
+	padding-bottom: 5em;
+	padding: 0 2em 2em;
+
+}
+
+#pages {
+	font-weight: 700;
+	padding-bottom: 5em;
+	margin: auto;
+	display: block;
+	width: fit-content;
+}
+
+#switches-next {
+	margin-left: auto;
+}
+
+#switches-prev {
+	margin-right: auto;
+}
+
+#switches button {
+	color: #fff;
+	height: 1.5em;
+	width: 4em;
+	font-weight: 700;
+	font-size: 1.6em;
+	transition-duration: 0.3s;
+	border: none;
+	background: #512a9d;
+	border-radius: 0.3em;
+}
+
+#switches button:hover{
+	background: #7c5bde;
+	transition-duration: 0.3s;
+}
+
+.btn-readMore{
+	display: inline-block;
+	padding: 0.5em 1em;
+	color: #a794cc;
+	background: #24104f;
+	border-radius: 0.5em;
+	margin-top: 1em;
+	transition-duration: 0.3s;
+}
+
+.btn-readMore:hover{
+	box-shadow: 0 0 1em 0.5em #24104f;
+	background: #a794cc;
+	color: #24104f;
+	transition-duration: 0.3s;
+}
+
+
+input {
+	display: block;
+	background: #6e4eb1;
+	border: none;
+	padding-left: 1em;
+	font-size: 1.4em;
+	border-radius: 0.2em;
+	margin-right: 0.3em;
+	transition-duration: .3s;
+}
+
+#doSearch img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.2em;
+	transition-duration: .3s;
+}
+
+#doSearch {
+	background: #000;
+	border: none;
+	border-radius: 0.2em;
+}
+
+#search {
+	display: flex;
+}
+
+
+#doSearch:hover {
+	border: 0.1em solid #fff;
+	box-shadow: 0 0 3em #512a9d;
+	transition-duration: .3s;
+}
+
+#doSearch:active {
+	background: #fff;
+	transition-duration: .1s;
+}
+
+.scripts-header{
+	display: flex;
+	align-items: center;
+	padding: 1em 0;
+	justify-content: space-between;
+}
+
+.auth a{
+	font-weight: 700;
+	color: #fff;
+}
+
+.auth {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.create{
+	margin-right: 1em;
+}
+
+@media (max-width: 1400px) {
+
+
+}
+
+@media (max-width: 1200px) {
+	.container {
+		max-width: none;
+	}
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+	body{
+		font-size: 0.8em;
+	}
+	.scripts-header{
+		flex-direction: column;
+	}
+
+	#sort {
+		margin-top: 1em;
+	}
+	#search{
+		width: 80%;
+	}
+
+	input {
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	.script{
+		padding: 2em 2em;
+	}
+}

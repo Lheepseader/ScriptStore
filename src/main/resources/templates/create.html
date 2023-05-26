@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ГеймПати</title>
+    <link rel="stylesheet" href="../static/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/registration.css">
+    <link rel="stylesheet" href="../static/css/select-multiple.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="../static/css/create.css">
+    <script src="../static/js/jquery-3.6.3.js" type="text/javascript"></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" th:href="@{/}">
+                <img src="../static/img/logo.svg" alt="">
+                <h1>LotusMind</h1>
+            </a>
+            <div class="auth">
+                <div class="auth" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/logout}" th:text="${username} + ', Выйти'">Выйти</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="registration">
+    <div class="container">
+        <form action="#" th:action="@{/create}" th:object="${script}" method="post">
+            <fieldset>
+                <div class="form-field">
+                    <label><span>Название:</span>
+                        <input type="text" th:field="*{title}">
+                        <p class="errors" th:each="error : ${#fields.errors('title')}"
+                           th:text="${error}">Validation error</p>
+                    </label>
+                </div>
+                <div class="form-field">
+                    <label><span>Содержание:</span>
+                        <textarea name="content" th:field="*{content}"></textarea>
+                        <p class="errors" th:each="error : ${#fields.errors('content')}"
+                           th:text="${error}">Validation error</p>
+                   </label>
+                </div>
+                <div class="form-field">
+                    <label><span>Краткое описание:</span>
+                        <textarea name="synopsis" th:field="*{synopsis}" maxlength="200"></textarea>
+                        <p class="errors" th:each="error : ${#fields.errors('synopsis')}"
+                           th:text="${error}">Validation error</p>
+                   </label>
+                </div>
+                <div class="form-field">
+                    <label><span>Выберете жанр</span>
+                        <select id="genreMultiple" multiple='multiple' style="width:200px" th:field="*{genres}">
+
+                            <option th:each="genre: ${genresList}"
+                                    th:value="${genre}" th:text="${genre.getTitle()}">
+                            </option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-field">
+                    <button type="submit" name="save">Сохранить</button>
+                    <button type="submit" name="post">Опубликовать</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
+
+
+
+<script src="../static/js/jquery.quicksearch.js" type="text/javascript"></script>
+<script src="../static/js/jquery.select-multiple.js" type="text/javascript"></script>
+<script src="../static/js/genre.js" type="text/javascript"></script>
+</body>
+</html>

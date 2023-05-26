@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ГеймПати</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/registration.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" th:href="@{/}">
+                <img src="../static/img/logo.svg" alt="">
+                <h1>LotusMind</h1>
+            </a>
+            <div class="auth">
+                <div class="auth" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/logout}">Выйти</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="registration">
+    <div class="container">
+        <form method="post" th:action="@{/login}">
+            <fieldset>
+                <legend><h2>Авторизация</h2></legend>
+                <div class="errors">
+                    <div th:if="${param.error}">
+                        <p>Неправильный логин или пароль</p>
+                    </div>
+                    <div th:if="${param.logout}">
+                        <p>Вы вышли из аккаунта</p>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label><span>Логин:</span> <input type="text" id="username" name="username" placeholder=""/></label>
+                </div>
+                <div class="form-field">
+                    <label><span>Пароль:</span> <input type="password" id="password" name="password" placeholder=""/></label>
+                </div>
+                <div class="form-field">
+                    <input type="submit" value="Войти">
+                    <p> Не зарегистрированы?
+                        <a th:href="@{/registration}">Зарегистрируйтесь</a>
+                    </p>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
+</body>
+</html>

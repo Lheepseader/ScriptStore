@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ГеймПати</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/script.css">
+    <script src="../static/js/jquery-3.6.3.js" type="text/javascript"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" th:href="@{/}">
+                <img src="../static/img/logo.svg" alt="">
+                <h1>LotusMind</h1>
+            </a>
+            <div class="auth">
+                <div class="create">
+                    <a th:href="@{/create}">Создать</a>
+                </div>
+                <div class="auth-inner" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/logout}" th:text="${username} + ', Выйти'">Выйти</a>
+                </div>
+                <div class="auth-inner" sec:authorize="!isAuthenticated()">
+                    <a th:href="@{/login}" th:text="Войти"></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="scripts">
+    <div class="container">
+        <div scripts-inner>
+            <div class="script">
+                <p class="script-datePublication" th:text="${script.getDatePublication()}">11.22.23</p>
+                <div class="script-footer">
+                    <p class="script-duration" th:text="'Длительность чтения: ' + ${script.getDuration()} + ' мин.'">12 мин.</p>
+                    <p class="script-author" th:text="'Автор: ' + ${script.getAuthor()}">Белоусов Александр</p>
+                </div>
+                <p class="script-genre" th:text="'Жанры: ' + ${script.getGenresAsString()}">Боевик, Драма, Экшен</p>
+                <h4 class="script-title" th:text="${script.getTitle()}">Lorem</h4>
+                <p class="script-synopsis" th:text="'Описание: ' + ${script.getContent()}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, perferendis minima saepe ex expedita dignissimos neque, reprehenderit, nemo nobis soluta molestias iusto optio numquam laborum similique beatae commodi quisquam ab.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ГеймПати</title>
+  <link rel="stylesheet" href="../static/css/reset.css">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <link rel="stylesheet" href="../static/css/registration.css">
+  <script src="../static/js/jquery-3.6.3.js" type="text/javascript"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" th:href="@{/}">
+                <img src="../static/img/logo.svg" alt="">
+                <h1>LotusMind</h1>
+            </a>            <div class="auth">
+                <div class="auth" sec:authorize="isAuthenticated()">
+                    <a th:href="@{/logout}">Выйти</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="registration">
+  <div class="container">
+      <form action="#" th:action="@{/registration}" th:object="${user}" method="post">
+        <fieldset>
+          <legend><h2>Регистрация</h2></legend>
+          <div class="errors" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+
+          <div class="form-field">
+              <label><span>Логин:</span> 
+                <p class="errors" th:each="error : ${#fields.errors('username')}" th:text="${error}"></p>
+                <input type="text" th:field="*{username}">
+              </label>
+          </div>
+
+          <div class="form-field">
+              <label>
+                <span>Электронная почта:</span> 
+                <p class="errors" th:each="error : ${#fields.errors('email')}" th:text="${error}"></p>
+                <input type="email" th:field="*{email}">
+              </label>
+          </div>
+
+          <div class="form-field">
+              <label><span>Пароль:</span>
+                <p class="errors" id="password" th:each="error : ${#fields.errors('password')}" th:text="${error}"></p>
+                <input type="password" th:field="*{password}">
+              </label>
+          </div>
+
+          <div class="form-field">
+              <label><span>Подтвердите пароль:</span>
+              <p class="errors" th:each="error : ${#fields.errors('password')}" th:text="${error}"></p>
+              <input type="password" required oninput="checkPasswordMatch(this);" th:field="*{matchingPassword}"></label>
+          </div>
+
+          <div class="form-field">
+              <button type="submit">Зарегистрироваться</button>
+              <p>если вы уже зарегистрированы, <a th:href="@{/login}">войти</a></p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+</section>
+<script src="../static/js/checkPasswordMatch.js" type="text/javascript"></script>
+</body>
+</html>
